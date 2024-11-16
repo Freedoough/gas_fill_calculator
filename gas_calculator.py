@@ -9,15 +9,74 @@ def percentage_fuel():
     # prompt for percentage of gas in tank
         print("Fuel Calculator (%):\n")
 
+        choice = str(input("Menu:\n (1): Continue to calculator\n (2): Switch Calculation\n (3): Exit Program\n> ").rstrip())
 
+        if choice == "1":
+            try:
+                tank_size = int(input("Enter fuel tank size (gallons): ").rstrip())
+                percentage = float(input("Enter the approximate percentage of fuel in your tank (decimal form): ").rstrip())
+                gas_price = float(input("Enter price of gas (USD $): ").rstrip())
 
+                percent_to_whole_num_difference = tank_size * percentage
 
+                tank_size_difference = tank_size - percent_to_whole_num_difference 
 
+                price_to_fill = gas_price * tank_size_difference
+
+                rounded_cost = math.ceil(price_to_fill * 100) / 100
+
+                print(f"Cost to fill tank: $ {rounded_cost}")
+
+               
+            except ValueError:
+                print("INVALID input, please enter percentage in decimal form (i.e. .25 for 25%)")
+                          
+
+        elif choice == "2":
+            print("Switching calculation\n")
+            time.sleep(1)
+            return
+        elif choice == "3":
+            print("Exiting Program")
+            sys.exit()
+        else:
+            print("INVALID\n")
+            time.sleep(2)
 
 def gallons_remaining():
     #prompt for tank size in gallons
     # prompt for remaining fuel in gallons
-    print("gallons remaining")
+    while True:
+
+        print("Fuel Calculator (gallons remaining): \n")
+
+        choice = str(input("Menu:\n (1): Continue to calculator\n (2): Switch Calculation\n (3): Exit Program\n> ").rstrip())
+
+        if choice == "1":
+            try:
+                tank_size = int(input("Enter fuel tank size (gallons): ").rstrip())
+                remaining_fuel = float(input("Enter remaining fuel (gallons): ").rstrip())
+                gas_price = float(input("Enter price of gas (USD $): ").rstrip())
+                
+                tank_difference = tank_size - remaining_fuel
+
+                fuel_cost = tank_difference * gas_price
+
+                rounded_cost = math.ceil(fuel_cost * 100) / 100
+
+                print(f"Cost to fill tank: $ {rounded_cost}")
+            except ValueError:
+                print("INVALID input, please enter numeric value.")
+
+        elif choice == "2":
+            print("Switching calculation\n")
+            time.sleep(1)
+        elif choice == "3":
+            print("Exiting Program")
+            sys.exit()
+        else:
+            print("INVALID\n")
+            time.sleep(2)        
 
 def get_info():
 
