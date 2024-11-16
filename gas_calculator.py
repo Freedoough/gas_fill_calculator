@@ -29,7 +29,10 @@ def percentage_fuel():
 
                
             except ValueError:
-                print("INVALID input, please enter percentage in decimal form (i.e. .25 for 25%)")
+                print("INVALID input, please enter percentage in decimal form (i.e. .25 for 25%)\n")
+                time.sleep(2)
+                print("\n")
+                time.sleep(.5)
                           
 
         elif choice == "2":
@@ -66,7 +69,10 @@ def gallons_remaining():
 
                 print(f"Cost to fill tank: $ {rounded_cost}")
             except ValueError:
-                print("INVALID input, please enter numeric value.")
+                print("INVALID input, please enter numeric value.\n")
+                time.sleep(2)
+                print("\n")
+                time.sleep(.5)
 
         elif choice == "2":
             print("Switching calculation\n")
