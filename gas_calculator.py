@@ -97,28 +97,7 @@ def get_info():
 
 get_info()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# OLD CODE
 
 
 
